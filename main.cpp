@@ -8,11 +8,12 @@ int	main(int ac, char **av)
 		return (1);
 	}
 
-	Command	test;
+	Command	test((std::string(av[1])));
 
 	try
 	{
 		test.CheckCmd(std::string(av[2]));
+		std::cout << "EXECUTION: " << av[2] << std::endl;
 	}
 	catch (std::exception& e)
 	{
